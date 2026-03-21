@@ -1,429 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="54 Enterprises - Fleet Management, 3D Printing, CNC Manufacturing, and Web Development Solutions">
-    <meta name="keywords"
-        content="fleet management, uber fleet, 3D printing, CNC manufacturing, web development, MX Transportation">
-    <title>54 Enterprises | Your Partner in Growth</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>54 Enterprises LLC — Government Contracting & Business Solutions</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #1d1d1f;
+  --gray-dark: #424245;
+  --gray: #6e6e73;
+  --gray-light: #86868b;
+  --gray-lighter: #d2d2d7;
+  --gray-bg: #f5f5f7;
+  --white: #fbfbfd;
+  --blue: #0071e3;
+  --blue-hover: #0077ed;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background: rgba(251, 251, 253, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+nav a {
+  font-size: 0.75rem;
+  color: var(--gray-dark);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--black); }
+
+nav a.nav-logo {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.02em;
+}
+
+/* ─── HERO ─── */
+.hero {
+  padding: 10rem 2rem 6rem;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--black);
+}
+
+.hero-gradient {
+  background: linear-gradient(90deg, #0071e3, #6c45d6, #e84393);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--gray);
+  line-height: 1.55;
+  max-width: 680px;
+  margin: 1.75rem auto 0;
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.hero-links a {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--blue);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s;
+}
+
+.hero-links a:hover { text-decoration: underline; }
+
+.hero-links a .arrow {
+  font-size: 1.3rem;
+  transition: transform 0.2s;
+}
+
+.hero-links a:hover .arrow { transform: translateX(3px); }
+
+/* ─── SECTION ─── */
+.section {
+  padding: 6rem 2rem;
+}
+
+.section-dark {
+  background: var(--gray-bg);
+}
+
+.section-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.section-center {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.section-eyebrow {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.section-headline {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  color: var(--black);
+  margin-top: 0.5rem;
+}
+
+.section-body {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* ─── SERVICES TILES ─── */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tile {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.section-dark .tile {
+  background: var(--white);
+}
+
+.tile:hover { transform: scale(1.015); }
+
+.tile-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.3;
+  fill: none;
+}
+
+.tile-icon.blue { background: #e3f0ff; }
+.tile-icon.blue svg { stroke: #0071e3; }
+.tile-icon.purple { background: #f0e6ff; }
+.tile-icon.purple svg { stroke: #6c45d6; }
+.tile-icon.green { background: #e0f5e6; }
+.tile-icon.green svg { stroke: #28a745; }
+.tile-icon.orange { background: #fff0e0; }
+.tile-icon.orange svg { stroke: #e67e22; }
+.tile-icon.pink { background: #fce4ec; }
+.tile-icon.pink svg { stroke: #e84393; }
+.tile-icon.teal { background: #e0f4f4; }
+.tile-icon.teal svg { stroke: #0d9488; }
+
+.tile h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.tile p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ─── PROCESS / HOW WE WORK ─── */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  text-align: center;
+}
+
+.process-step { position: relative; }
+
+.process-num {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, var(--black), var(--gray-lighter));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.process-step h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0.75rem 0 0.4rem;
+}
+
+.process-step p {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ─── NAICS CODES ─── */
+.naics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.naics-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 0.5px solid var(--gray-lighter);
+  transition: background 0.2s;
+}
+
+.naics-row:hover { background: rgba(0, 0, 0, 0.015); }
+
+.naics-code {
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace;
+  color: var(--blue);
+  min-width: 56px;
+}
+
+.naics-label {
+  font-size: 0.95rem;
+  color: var(--gray-dark);
+}
+
+/* ─── WHY / FEATURES ─── */
+.features-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.feature-card {
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+}
+
+.feature-card.dark {
+  background: var(--black);
+  color: var(--white);
+}
+
+.feature-card.dark h3 { color: var(--white); }
+.feature-card.dark p { color: var(--gray-light); }
+
+.feature-card.light {
+  background: var(--gray-bg);
+}
+
+.feature-card h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+/* ─── SAM BADGE ─── */
+.sam-strip {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--white);
+}
+
+.sam-badge-apple {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-dark);
+}
+
+.sam-dot-green {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #30d158;
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(48, 209, 88, 0); }
+}
+
+/* ─── CONTACT ─── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.contact-text h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  line-height: 1.15;
+}
+
+.contact-text p {
+  font-size: 1.05rem;
+  color: var(--gray);
+  line-height: 1.65;
+  margin-top: 1rem;
+}
+
+.contact-details {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-detail-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-light);
+  margin-bottom: 0.15rem;
+}
+
+.contact-detail-value {
+  font-size: 1.05rem;
+  color: var(--black);
+}
+
+.contact-detail-value a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.contact-detail-value a:hover { text-decoration: underline; }
+
+.contact-form-apple {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form-apple .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-form-apple label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gray-dark);
+  margin-bottom: 0.35rem;
+}
+
+.contact-form-apple input,
+.contact-form-apple textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--gray-lighter);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--black);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form-apple input:focus,
+.contact-form-apple textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.12);
+}
+
+.contact-form-apple textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.btn-apple {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2rem;
+  border-radius: 980px;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn-apple-blue {
+  background: var(--blue);
+  color: #fff;
+}
+
+.btn-apple-blue:hover { background: var(--blue-hover); }
+
+.btn-apple-outline {
+  background: transparent;
+  color: var(--blue);
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-apple-outline:hover { text-decoration: underline; }
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 0.5px solid var(--gray-lighter);
+  padding: 1.75rem 2rem;
+}
+
+.footer-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  font-size: 0.8rem;
+  color: var(--gray-light);
+}
+
+.footer-right {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.footer-right a {
+  font-size: 0.8rem;
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.footer-right a:hover { color: var(--blue); }
+
+/* ─── SCROLL REVEALS ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .features-row { grid-template-columns: 1fr; }
+  .naics-grid { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 600px) {
+  nav { gap: 1.25rem; padding: 0 1rem; }
+  nav a { font-size: 0.7rem; }
+  .hero { padding: 7rem 1.5rem 4rem; }
+  .section { padding: 4rem 1.5rem; }
+  .tiles { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .hero-links { flex-direction: column; gap: 1rem; }
+  .contact-form-apple .form-row { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; }
+  .footer-right { gap: 1rem; }
+}
+</style>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <span class="logo-text">54<span class="logo-highlight">ENTERPRISES</span></span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-btn" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">54 Enterprises</a>
+  <a href="#services">Services</a>
+  <a href="#approach">Approach</a>
+  <a href="#industries">Industries</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Government Contracting & Business Solutions</p>
+  <h1>Capability meets<br><span class="hero-gradient">opportunity.</span></h1>
+  <p class="hero-sub">54 Enterprises LLC is a small business government contractor and management consultancy. We source solutions, build systems, and execute contracts across federal, state, and commercial sectors.</p>
+  <div class="hero-links">
+    <a href="#services">Explore our services <span class="arrow">›</span></a>
+    <a href="#contact">Get in touch <span class="arrow">›</span></a>
+  </div>
+</section>
+
+<!-- SAM BADGE -->
+<div class="sam-strip">
+  <div class="sam-badge-apple">
+    <span class="sam-dot-green"></span>
+    SAM.gov Registered &nbsp;·&nbsp; Active &nbsp;·&nbsp; Eligible for Federal Awards
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section section-dark" id="services">
+  <div class="section-inner">
+    <div class="section-center reveal">
+      <p class="section-eyebrow">Services</p>
+      <h2 class="section-headline">Everything your contract requires.<br>Nothing it doesn't.</h2>
+      <p class="section-body">From facility maintenance to custom software — we match the right solution to every requirement.</p>
+    </div>
+    
+    <div class="tiles">
+      <div class="tile reveal">
+        <div class="tile-icon green">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Welcome to 54 Enterprises
-                </h1>
-                <p class="hero-description">
-                    We transform opportunities into profitable ventures.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
-                    <a href="#services" class="btn btn-secondary">Our Services</a>
-                </div>
-            </div>
+        <h3>Facility Services</h3>
+        <p>Janitorial, landscaping, grounds maintenance, snow removal, and building support for federal and commercial facilities.</p>
+      </div>
+      
+      <div class="tile reveal">
+        <div class="tile-icon blue">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll to explore</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
+        <h3>Technology Solutions</h3>
+        <p>Custom software, data processing, IT systems design, and AI-powered automation. Digital infrastructure that works.</p>
+      </div>
+      
+      <div class="tile reveal">
+        <div class="tile-icon orange">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Who We Are</span>
-                <h2 class="section-title">Driving Innovation Across Industries</h2>
-                <p class="section-description">
-                    At 54 Enterprises, we specialize in turning assets into income streams.
-                    From vehicle fleet management to precision manufacturing and cutting-edge web solutions,
-                    we deliver excellence in every venture.
-                </p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">🚗</div>
-                    <div class="stat-number" data-target="138">0</div>
-                    <div class="stat-label">Fleet Vehicles Managed</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🏭</div>
-                    <div class="stat-number" data-target="24658">0</div>
-                    <div class="stat-label">Parts Manufactured</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">💼</div>
-                    <div class="stat-number" data-target="14">0</div>
-                    <div class="stat-label">Business Partners</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⭐</div>
-                    <div class="stat-number" data-target="100">0</div>
-                    <div class="stat-label">Client Satisfaction</div>
-                    <span class="stat-suffix">%</span>
-                </div>
-            </div>
+        <h3>Supply & Procurement</h3>
+        <p>Product sourcing, vendor management, and fulfillment. From office equipment to specialized components.</p>
+      </div>
+      
+      <div class="tile reveal">
+        <div class="tile-icon purple">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">What We Do</span>
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-description">
-                    Comprehensive solutions tailored to accelerate your success
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Fleet Management Service -->
-                <div class="service-card featured">
-                    <div class="service-image">
-                        <img src="images/fleet-management.png" alt="Fleet Management Services">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M5 17H4C3.44772 17 3 16.5523 3 16V14C3 13.4477 3.44772 13 4 13H5M5 17V13M5 17H10M5 13H10M10 17V13M10 17H14M10 13H14M14 17V13M14 17H19M14 13H19M19 17H20C20.5523 17 21 16.5523 21 16V14C21 13.4477 20.5523 13 20 13H19M19 17V13"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                <circle cx="7" cy="20" r="2" stroke="currentColor" stroke-width="2" />
-                                <circle cx="17" cy="20" r="2" stroke="currentColor" stroke-width="2" />
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Uber Fleet Management</h3>
-                        <p class="service-description">
-                            We turn vehicles into revenue generators. Looking to buy a vehicle and start making passive
-                            income? We handle everything from acquisition to management, ensuring your investment works
-                            for you 24/7.
-                        </p>
-                        <ul class="service-features">
-                            <li>Vehicle acquisition assistance</li>
-                            <li>Complete fleet management</li>
-                            <li>Revenue optimization</li>
-                            <li>Driver coordination</li>
-                            <li>Maintenance & support</li>
-                        </ul>
-                        <a href="#contact" class="service-link">
-                            Start Earning Today
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Drone/UAV Service -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/drone-services.png" alt="Professional Drone and UAV Solutions">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
-                                <path d="M12 9V3M12 21V15M3 12H9M15 12H21" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Drone & UAV Solutions</h3>
-                        <p class="service-description">
-                            Advanced unmanned aerial systems for specialized missions. We supply FPV drones,
-                            payload-configured platforms, VTOL aircraft, and custom UAV solutions tailored to your
-                            operational requirements.
-                        </p>
-                        <ul class="service-features">
-                            <li>FPV racing & tactical drones</li>
-                            <li>Payload delivery systems</li>
-                            <li>VTOL aircraft platforms</li>
-                            <li>Mission-specific configurations</li>
-                            <li>Training & support services</li>
-                        </ul>
-                        <a href="#contact" class="service-link">
-                            Explore Solutions
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Manufacturing Service -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/manufacturing.png" alt="3D Printing and CNC Manufacturing">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M12 18V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M9 15H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <h3 class="service-title">3D Printing & CNC Manufacturing</h3>
-                        <p class="service-description">
-                            Precision manufacturing meets innovation. Our advanced 3D printing and CNC
-                            capabilities bring your designs to life with unmatched accuracy and quality.
-                        </p>
-                        <ul class="service-features">
-                            <li>Rapid prototyping</li>
-                            <li>Custom part production</li>
-                            <li>High-precision CNC machining</li>
-                            <li>Material variety</li>
-                            <li>Design consultation</li>
-                        </ul>
-                        <a href="#contact" class="service-link">
-                            Get a Quote
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Web Development Service -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/web-services.png" alt="Web Development Services">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor"
-                                    stroke-width="2" />
-                                <path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                <path d="M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                <path d="M7 8L10 11L7 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M13 12H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Web Development Solutions</h3>
-                        <p class="service-description">
-                            In partnership with The Website Geeks, we deliver cutting-edge web solutions
-                            that elevate your digital presence and drive business growth.
-                        </p>
-                        <ul class="service-features">
-                            <li>Custom website development</li>
-                            <li>E-commerce platforms</li>
-                            <li>SEO optimization</li>
-                            <li>Mobile-responsive design</li>
-                            <li>Ongoing maintenance</li>
-                        </ul>
-                        <a href="https://thewebsitegeeks.com" target="_blank" class="service-link">
-                            Build Your Site
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+        <h3>Management Consulting</h3>
+        <p>Process optimization, operational analysis, workflow design, and strategic planning for lasting results.</p>
+      </div>
+      
+      <div class="tile reveal">
+        <div class="tile-icon pink">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-    </section>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <span class="section-label">Get In Touch</span>
-                    <h2 class="section-title">Let's Start Your Journey</h2>
-                    <p class="contact-description">
-                        Ready to turn your assets into income? Looking for precision manufacturing?
-                        Need a stunning website? We're here to help you succeed.
-                    </p>
-
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-method-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Email Us</h4>
-                                <p>llc54enterprises@gmail.com</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="contact-method-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Serving clients nationwide</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-cta">
-                        <p>🚀 Ready to get started?</p>
-                        <p>Fill out the form and we'll be in touch within 24 hours.</p>
-                    </div>
-                </div>
-
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">Service Interest</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a service</option>
-                            <option value="fleet">Uber Fleet Management</option>
-                            <option value="drones">Drone & UAV Solutions</option>
-                            <option value="manufacturing">3D Printing & CNC Manufacturing</option>
-                            <option value="web">Web Development</option>
-                            <option value="multiple">Multiple Services</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="5" required
-                            placeholder="Tell us about your project or inquiry..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        Send Inquiry
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </form>
-            </div>
+        <h3>Production Management</h3>
+        <p>End-to-end project coordination across diverse industries. From concept to completion, on time and on budget.</p>
+      </div>
+      
+      <div class="tile reveal">
+        <div class="tile-icon teal">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
-    </section>
+        <h3>Professional Services</h3>
+        <p>Technical writing, research, analysis, training development, and administrative support. Quality output, efficiently.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-text">54<span class="logo-highlight">ENTERPRISES</span></span>
-                    </div>
-                    <p class="footer-tagline">Transforming opportunities into profitable ventures</p>
-                </div>
+<!-- APPROACH -->
+<section class="section" id="approach">
+  <div class="section-inner">
+    <div class="section-center reveal">
+      <p class="section-eyebrow">How We Work</p>
+      <h2 class="section-headline">Small business speed.<br>Enterprise-grade results.</h2>
+    </div>
+    
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <h4>Identify</h4>
+        <p>Analyze the solicitation, scope of work, and requirements to determine exactly what success looks like.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">02</div>
+        <h4>Source</h4>
+        <p>Assemble the right team, find the right supplier, or build the right technology — whatever the contract demands.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">03</div>
+        <h4>Execute</h4>
+        <p>Direct oversight, clear communication, rigorous quality control. Every deliverable tracked, every deadline met.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">04</div>
+        <h4>Deliver</h4>
+        <p>Transparent reporting, performance documentation, and continuous improvement. Results you can verify.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#services">Fleet Management</a></li>
-                            <li><a href="#services">Drone & UAV Solutions</a></li>
-                            <li><a href="#services">3D Printing</a></li>
-                            <li><a href="#services">CNC Manufacturing</a></li>
-                            <li><a href="#services">Web Development</a></li>
-                        </ul>
-                    </div>
+<!-- WHY US -->
+<section class="section" style="padding-top: 0;">
+  <div class="section-inner">
+    <div class="features-row">
+      <div class="feature-card dark reveal">
+        <h3>Technology as a force multiplier.</h3>
+        <p>We use AI-augmented workflows and modern development tools to deliver 3–5x faster than traditional methods — at a fraction of the cost. Small team, big output.</p>
+      </div>
+      <div class="feature-card light reveal">
+        <h3>Direct access to leadership.</h3>
+        <p>No layers of management. No endless email chains. You talk to the people doing the work. Decisions happen fast, and so does delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- NAICS CODES -->
+<section class="section section-dark" id="industries">
+  <div class="section-inner">
+    <div class="section-center reveal">
+      <p class="section-eyebrow">Industry Classifications</p>
+      <h2 class="section-headline">Registered across multiple NAICS codes.</h2>
+      <p class="section-body">Our diversified portfolio enables us to compete for a wide range of federal contract opportunities.</p>
+    </div>
+    
+    <div class="naics-grid reveal">
+      <div class="naics-row">
+        <span class="naics-code">541511</span>
+        <span class="naics-label">Custom Computer Programming</span>
+      </div>
+      <div class="naics-row">
+        <span class="naics-code">541512</span>
+        <span class="naics-label">Computer Systems Design</span>
+      </div>
+      <div class="naics-row">
+        <span class="naics-code">561720</span>
+        <span class="naics-label">Janitorial Services</span>
+      </div>
+      <div class="naics-row">
+        <span class="naics-code">561730</span>
+        <span class="naics-label">Landscaping Services</span>
+      </div>
+      <div class="naics-row">
+        <span class="naics-code">541611</span>
+        <span class="naics-label">Management Consulting</span>
+      </div>
+      <div class="naics-row">
+        <span class="naics-code">561410</span>
+        <span class="naics-label">Document Preparation</span>
+      </div>
+      <div class="naics-row">
+        <span class="naics-code">541519</span>
+        <span class="naics-label">Other Computer Services</span>
+      </div>
+      <div class="naics-row">
+        <span class="naics-code">518210</span>
+        <span class="naics-label">Data Processing & Hosting</span>
+      </div>
+      <div class="naics-row">
+        <span class="naics-code">423430</span>
+        <span class="naics-label">Computer Equipment Wholesalers</span>
+      </div>
+      <div class="naics-row">
+        <span class="naics-code">561210</span>
+        <span class="naics-label">Facilities Support Services</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#home">About Us</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="#services">Our Work</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 54 Enterprises. All rights reserved.</p>
-
-            </div>
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="contact-layout">
+      <div class="contact-text reveal">
+        <h3>Let's discuss your requirements.</h3>
+        <p>Whether you're a contracting officer, a prime contractor seeking a small business partner, or an agency with a need — we're ready.</p>
+        
+        <div class="contact-details">
+          <div>
+            <div class="contact-detail-label">Company</div>
+            <div class="contact-detail-value">54 Enterprises LLC</div>
+          </div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-value"><a href="mailto:contact@54enterprises.com">contact@54enterprises.com</a></div>
+          </div>
+          <div>
+            <div class="contact-detail-label">Location</div>
+            <div class="contact-detail-value">Huntington Beach, California</div>
+          </div>
+          <div>
+            <div class="contact-detail-label">Registrations</div>
+            <div class="contact-detail-value">SAM.gov Active · CAGE Code on File</div>
+          </div>
         </div>
-    </footer>
+      </div>
+      
+      <form class="contact-form-apple reveal" onsubmit="event.preventDefault(); this.querySelector('button').textContent = 'Sent ✓'; this.querySelector('button').style.background = '#30d158';">
+        <div class="form-row">
+          <div>
+            <label>Name</label>
+            <input type="text" required>
+          </div>
+          <div>
+            <label>Organization</label>
+            <input type="text">
+          </div>
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" required>
+        </div>
+        <div>
+          <label>How can we help?</label>
+          <textarea placeholder="Tell us about your requirement or opportunity..."></textarea>
+        </div>
+        <button type="submit" class="btn-apple btn-apple-blue" style="width: 100%;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      Copyright © 2026 54 Enterprises LLC. All rights reserved.
+    </div>
+    <div class="footer-right">
+      <a href="mailto:contact@54enterprises.com">Contact</a>
+      <a href="https://sam.gov" target="_blank">SAM.gov</a>
+      <a href="#">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
 </body>
-
 </html>
+
