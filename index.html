@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>54 Enterprises LLC — Government Contracting & Business Solutions</title>
+<title>54 Enterprises LLC - Business Solutions and Contract Management</title>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -17,6 +17,7 @@
   --white: #fbfbfd;
   --blue: #0071e3;
   --blue-hover: #0077ed;
+  --green: #30d158;
 }
 
 html { scroll-behavior: smooth; }
@@ -30,7 +31,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── NAV ─── */
 nav {
   position: fixed;
   top: 0;
@@ -65,7 +65,6 @@ nav a.nav-logo {
   letter-spacing: -0.02em;
 }
 
-/* ─── HERO ─── */
 .hero {
   padding: 10rem 2rem 6rem;
   text-align: center;
@@ -131,7 +130,6 @@ nav a.nav-logo {
 
 .hero-links a:hover .arrow { transform: translateX(3px); }
 
-/* ─── SECTION ─── */
 .section {
   padding: 6rem 2rem;
 }
@@ -176,7 +174,6 @@ nav a.nav-logo {
   margin-top: 1rem;
 }
 
-/* ─── SERVICES TILES ─── */
 .tiles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -189,10 +186,6 @@ nav a.nav-logo {
   padding: 2.5rem 2rem;
   text-align: center;
   transition: transform 0.3s ease;
-}
-
-.section-dark .tile {
-  background: var(--white);
 }
 
 .tile:hover { transform: scale(1.015); }
@@ -241,7 +234,6 @@ nav a.nav-logo {
   line-height: 1.6;
 }
 
-/* ─── PROCESS / HOW WE WORK ─── */
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -275,38 +267,6 @@ nav a.nav-logo {
   line-height: 1.6;
 }
 
-/* ─── NAICS CODES ─── */
-.naics-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-}
-
-.naics-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.5rem;
-  border-bottom: 0.5px solid var(--gray-lighter);
-  transition: background 0.2s;
-}
-
-.naics-row:hover { background: rgba(0, 0, 0, 0.015); }
-
-.naics-code {
-  font-size: 0.8rem;
-  font-weight: 600;
-  font-family: 'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace;
-  color: var(--blue);
-  min-width: 56px;
-}
-
-.naics-label {
-  font-size: 0.95rem;
-  color: var(--gray-dark);
-}
-
-/* ─── WHY / FEATURES ─── */
 .features-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -344,7 +304,35 @@ nav a.nav-logo {
   line-height: 1.65;
 }
 
-/* ─── SAM BADGE ─── */
+.naics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.naics-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 0.5px solid var(--gray-lighter);
+  transition: background 0.2s;
+}
+
+.naics-row:hover { background: rgba(0, 0, 0, 0.015); }
+
+.naics-code {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green);
+  min-width: 20px;
+}
+
+.naics-label {
+  font-size: 0.95rem;
+  color: var(--gray-dark);
+}
+
 .sam-strip {
   text-align: center;
   padding: 4rem 2rem;
@@ -373,7 +361,6 @@ nav a.nav-logo {
   50% { box-shadow: 0 0 0 6px rgba(48, 209, 88, 0); }
 }
 
-/* ─── CONTACT ─── */
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -490,16 +477,6 @@ nav a.nav-logo {
 
 .btn-apple-blue:hover { background: var(--blue-hover); }
 
-.btn-apple-outline {
-  background: transparent;
-  color: var(--blue);
-  border: none;
-  font-size: 1rem;
-}
-
-.btn-apple-outline:hover { text-decoration: underline; }
-
-/* ─── FOOTER ─── */
 footer {
   border-top: 0.5px solid var(--gray-lighter);
   padding: 1.75rem 2rem;
@@ -531,7 +508,6 @@ footer {
 
 .footer-right a:hover { color: var(--blue); }
 
-/* ─── SCROLL REVEALS ─── */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -543,7 +519,6 @@ footer {
   transform: translateY(0);
 }
 
-/* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .tiles { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
@@ -568,41 +543,37 @@ footer {
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">54 Enterprises</a>
   <a href="#services">Services</a>
-  <a href="#approach">Approach</a>
-  <a href="#industries">Industries</a>
+  <a href="#approach">How We Work</a>
+  <a href="#partners">Partners</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <p class="hero-eyebrow">Government Contracting & Business Solutions</p>
-  <h1>Capability meets<br><span class="hero-gradient">opportunity.</span></h1>
-  <p class="hero-sub">54 Enterprises LLC is a small business government contractor and management consultancy. We source solutions, build systems, and execute contracts across federal, state, and commercial sectors.</p>
+  <p class="hero-eyebrow">Business Solutions and Contract Management</p>
+  <h1>We find the work.<br><span class="hero-gradient">You do what you do best.</span></h1>
+  <p class="hero-sub">54 Enterprises LLC connects skilled service providers and suppliers with high-value contract opportunities. We handle the sourcing, management, and paperwork so you can focus on delivering great work.</p>
   <div class="hero-links">
-    <a href="#services">Explore our services <span class="arrow">›</span></a>
-    <a href="#contact">Get in touch <span class="arrow">›</span></a>
+    <a href="#services">What we do <span class="arrow">&#8250;</span></a>
+    <a href="#partners">Partner with us <span class="arrow">&#8250;</span></a>
   </div>
 </section>
 
-<!-- SAM BADGE -->
 <div class="sam-strip">
   <div class="sam-badge-apple">
     <span class="sam-dot-green"></span>
-    SAM.gov Registered &nbsp;·&nbsp; Active &nbsp;·&nbsp; Eligible for Federal Awards
+    Registered Contractor &middot; Active &middot; Bringing Opportunities to Our Partners
   </div>
 </div>
 
-<!-- SERVICES -->
 <section class="section section-dark" id="services">
   <div class="section-inner">
     <div class="section-center reveal">
       <p class="section-eyebrow">Services</p>
-      <h2 class="section-headline">Everything your contract requires.<br>Nothing it doesn't.</h2>
-      <p class="section-body">From facility maintenance to custom software — we match the right solution to every requirement.</p>
+      <h2 class="section-headline">We manage the contract.<br>Our partners deliver the work.</h2>
+      <p class="section-body">We source opportunities across multiple industries and connect them with the right providers, from facility services to technology to product fulfillment.</p>
     </div>
     
     <div class="tiles">
@@ -611,7 +582,7 @@ footer {
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <h3>Facility Services</h3>
-        <p>Janitorial, landscaping, grounds maintenance, snow removal, and building support for federal and commercial facilities.</p>
+        <p>We source janitorial, landscaping, grounds maintenance, and building support contracts, then partner with local service providers to deliver.</p>
       </div>
       
       <div class="tile reveal">
@@ -619,31 +590,31 @@ footer {
           <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
         <h3>Technology Solutions</h3>
-        <p>Custom software, data processing, IT systems design, and AI-powered automation. Digital infrastructure that works.</p>
+        <p>Custom software, data processing, and IT support. We build digital tools and systems for organizations that need modern, efficient infrastructure.</p>
       </div>
       
       <div class="tile reveal">
         <div class="tile-icon orange">
           <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         </div>
-        <h3>Supply & Procurement</h3>
-        <p>Product sourcing, vendor management, and fulfillment. From office equipment to specialized components.</p>
+        <h3>Supply and Procurement</h3>
+        <p>We find the suppliers, negotiate the terms, and manage fulfillment, from office equipment to specialized components to industrial materials.</p>
       </div>
       
       <div class="tile reveal">
         <div class="tile-icon purple">
           <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
-        <h3>Management Consulting</h3>
-        <p>Process optimization, operational analysis, workflow design, and strategic planning for lasting results.</p>
+        <h3>Project Management</h3>
+        <p>End-to-end coordination of multi-party projects. We keep timelines, deliverables, and stakeholders aligned from kickoff to closeout.</p>
       </div>
       
       <div class="tile reveal">
         <div class="tile-icon pink">
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <h3>Production Management</h3>
-        <p>End-to-end project coordination across diverse industries. From concept to completion, on time and on budget.</p>
+        <h3>Staffing Solutions</h3>
+        <p>Connecting qualified professionals with short-term and contract positions. We handle the placement, you provide the talent.</p>
       </div>
       
       <div class="tile reveal">
@@ -651,122 +622,118 @@ footer {
           <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
         <h3>Professional Services</h3>
-        <p>Technical writing, research, analysis, training development, and administrative support. Quality output, efficiently.</p>
+        <p>Technical writing, research, training development, and administrative support. Quality deliverables, on time and on spec.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- APPROACH -->
 <section class="section" id="approach">
   <div class="section-inner">
     <div class="section-center reveal">
       <p class="section-eyebrow">How We Work</p>
-      <h2 class="section-headline">Small business speed.<br>Enterprise-grade results.</h2>
+      <h2 class="section-headline">Small business speed.<br>Big business results.</h2>
     </div>
     
     <div class="process-grid">
       <div class="process-step reveal">
         <div class="process-num">01</div>
         <h4>Identify</h4>
-        <p>Analyze the solicitation, scope of work, and requirements to determine exactly what success looks like.</p>
+        <p>We find contract opportunities that match what our partners do best.</p>
       </div>
       <div class="process-step reveal">
         <div class="process-num">02</div>
         <h4>Source</h4>
-        <p>Assemble the right team, find the right supplier, or build the right technology — whatever the contract demands.</p>
+        <p>We reach out to the right service providers, suppliers, or specialists for the job.</p>
       </div>
       <div class="process-step reveal">
         <div class="process-num">03</div>
         <h4>Execute</h4>
-        <p>Direct oversight, clear communication, rigorous quality control. Every deliverable tracked, every deadline met.</p>
+        <p>Our partners do the work. We handle oversight, communication, and quality control.</p>
       </div>
       <div class="process-step reveal">
         <div class="process-num">04</div>
         <h4>Deliver</h4>
-        <p>Transparent reporting, performance documentation, and continuous improvement. Results you can verify.</p>
+        <p>Transparent reporting, on-time completion, and a track record that opens doors to more work.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
 <section class="section" style="padding-top: 0;">
   <div class="section-inner">
     <div class="features-row">
       <div class="feature-card dark reveal">
-        <h3>Technology as a force multiplier.</h3>
-        <p>We use AI-augmented workflows and modern development tools to deliver 3–5x faster than traditional methods — at a fraction of the cost. Small team, big output.</p>
+        <h3>We bring the contracts. You bring the expertise.</h3>
+        <p>Our partners don't need to chase leads, write proposals, or deal with paperwork. We handle all of that. When we reach out, the opportunity is real and the contract is ready. All you have to do is deliver.</p>
       </div>
       <div class="feature-card light reveal">
-        <h3>Direct access to leadership.</h3>
-        <p>No layers of management. No endless email chains. You talk to the people doing the work. Decisions happen fast, and so does delivery.</p>
+        <h3>One point of contact. Zero runaround.</h3>
+        <p>No layers of management. No endless email chains. When you work with us, you talk directly to the people making decisions. Fast answers, clear expectations, and payments on time.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NAICS CODES -->
-<section class="section section-dark" id="industries">
+<section class="section section-dark" id="partners">
   <div class="section-inner">
     <div class="section-center reveal">
-      <p class="section-eyebrow">Industry Classifications</p>
-      <h2 class="section-headline">Registered across multiple NAICS codes.</h2>
-      <p class="section-body">Our diversified portfolio enables us to compete for a wide range of federal contract opportunities.</p>
+      <p class="section-eyebrow">Partner With Us</p>
+      <h2 class="section-headline">We are looking for great companies<br>to grow with.</h2>
+      <p class="section-body">If you provide any of these services, we want to hear from you. We have active contract opportunities and need reliable partners to fulfill them.</p>
     </div>
     
     <div class="naics-grid reveal">
       <div class="naics-row">
-        <span class="naics-code">541511</span>
-        <span class="naics-label">Custom Computer Programming</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">Janitorial and cleaning companies</span>
       </div>
       <div class="naics-row">
-        <span class="naics-code">541512</span>
-        <span class="naics-label">Computer Systems Design</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">Landscaping and grounds maintenance</span>
       </div>
       <div class="naics-row">
-        <span class="naics-code">561720</span>
-        <span class="naics-label">Janitorial Services</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">Building maintenance and facility support</span>
       </div>
       <div class="naics-row">
-        <span class="naics-code">561730</span>
-        <span class="naics-label">Landscaping Services</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">Security guard services</span>
       </div>
       <div class="naics-row">
-        <span class="naics-code">541611</span>
-        <span class="naics-label">Management Consulting</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">Office supply and equipment distributors</span>
       </div>
       <div class="naics-row">
-        <span class="naics-code">561410</span>
-        <span class="naics-label">Document Preparation</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">Staffing and temp agencies</span>
       </div>
       <div class="naics-row">
-        <span class="naics-code">541519</span>
-        <span class="naics-label">Other Computer Services</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">Pest control and environmental services</span>
       </div>
       <div class="naics-row">
-        <span class="naics-code">518210</span>
-        <span class="naics-label">Data Processing & Hosting</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">IT support and help desk providers</span>
       </div>
       <div class="naics-row">
-        <span class="naics-code">423430</span>
-        <span class="naics-label">Computer Equipment Wholesalers</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">Training and education providers</span>
       </div>
       <div class="naics-row">
-        <span class="naics-code">561210</span>
-        <span class="naics-label">Facilities Support Services</span>
+        <span class="naics-code">&#10003;</span>
+        <span class="naics-label">Transportation and courier services</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section" id="contact">
   <div class="section-inner">
     <div class="contact-layout">
       <div class="contact-text reveal">
-        <h3>Let's discuss your requirements.</h3>
-        <p>Whether you're a contracting officer, a prime contractor seeking a small business partner, or an agency with a need — we're ready.</p>
+        <h3>Let's work together.</h3>
+        <p>Whether you are a service provider looking for steady contract work, a supplier with products to move, or an organization that needs solutions delivered, we would like to talk.</p>
         
         <div class="contact-details">
           <div>
@@ -775,7 +742,7 @@ footer {
           </div>
           <div>
             <div class="contact-detail-label">Email</div>
-            <div class="contact-detail-value"><a href="mailto:contact@54enterprises.com">contact@54enterprises.com</a></div>
+            <div class="contact-detail-value"><a href="mailto:sourcing@54enterprises.com">sourcing@54enterprises.com</a></div>
           </div>
           <div>
             <div class="contact-detail-label">Location</div>
@@ -783,12 +750,12 @@ footer {
           </div>
           <div>
             <div class="contact-detail-label">Registrations</div>
-            <div class="contact-detail-value">SAM.gov Active · CAGE Code on File</div>
+            <div class="contact-detail-value">SAM.gov Active, CAGE Code on File</div>
           </div>
         </div>
       </div>
       
-      <form class="contact-form-apple reveal" onsubmit="event.preventDefault(); this.querySelector('button').textContent = 'Sent ✓'; this.querySelector('button').style.background = '#30d158';">
+      <form class="contact-form-apple reveal" onsubmit="event.preventDefault(); this.querySelector('button').textContent = 'Sent'; this.querySelector('button').style.background = '#30d158';">
         <div class="form-row">
           <div>
             <label>Name</label>
@@ -805,7 +772,7 @@ footer {
         </div>
         <div>
           <label>How can we help?</label>
-          <textarea placeholder="Tell us about your requirement or opportunity..."></textarea>
+          <textarea placeholder="Tell us about your services or what you are looking for..."></textarea>
         </div>
         <button type="submit" class="btn-apple btn-apple-blue" style="width: 100%;">Send Message</button>
       </form>
@@ -813,15 +780,14 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
-      Copyright © 2026 54 Enterprises LLC. All rights reserved.
+      Copyright 2026 54 Enterprises LLC. All rights reserved.
     </div>
     <div class="footer-right">
-      <a href="mailto:contact@54enterprises.com">Contact</a>
-      <a href="https://sam.gov" target="_blank">SAM.gov</a>
+      <a href="mailto:sourcing@54enterprises.com">Contact</a>
+      <a href="#partners">Partners</a>
       <a href="#">Privacy</a>
     </div>
   </div>
@@ -839,4 +805,3 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 </body>
 </html>
-
